@@ -1,29 +1,42 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native'
 import React from 'react'
 import TopNav from '../../../components/TopNav'
+import TransactionDetails from '../../../components/TransactionDetails'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const Home = () => {
 
   let ballance = 12500
   return (
-    <View style={styles.container}>
-      <TopNav />
+    <SafeAreaView>
+    <ScrollView style={styles.scroll}>
 
-      <View style={styles.ballanceContainer}>
-        <Text style={styles.text}>Total Current Balance</Text>
-        <Text style={styles.h1}>{ballance}$</Text>
-        <TouchableOpacity
-          style={styles.btnPrimary}
-          onPress={() =>  navigation.navigate('OnboardingOne')}
-        >
-          <Text style={styles.btnText}>+ Top Up</Text>
-      </TouchableOpacity>
-      </View>
+        <View style={styles.container}>
+          <TopNav />
 
-      <View style={styles.transactions}>
-        <Text style={styles.h2}>Recent Transactions</Text>
-      </View>
-    </View>
+          <View style={styles.ballanceContainer}>
+            <Text style={styles.text}>Total Current Balance</Text>
+            <Text style={styles.h1}>{ballance}$</Text>
+            <TouchableOpacity
+              style={styles.btnPrimary}
+              onPress={() =>  navigation.navigate('OnboardingOne')}
+            >
+              <Text style={styles.btnText}>+ Top Up</Text>
+          </TouchableOpacity>
+          </View>
+
+          <View style={styles.transactions}>
+            <Text style={styles.h2}>Recent Transactions</Text>
+              <TransactionDetails />
+              <TransactionDetails />
+              <TransactionDetails />
+              <TransactionDetails />
+              <TransactionDetails />
+          </View>
+        </View>
+    </ScrollView>
+
+    </SafeAreaView>
   )
 }
 
@@ -72,5 +85,8 @@ transactions:{
   width:'90%',
   marginTop:32
   
+},
+scroll:{
+  marginBottom:50
 }
 })
