@@ -6,7 +6,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import Purchase from '../../../components/Purchase'
 import OutCash from '../../../components/OutCash'
 
-const Wallet = () => {
+const Wallet = ( {navigation}) => {
 
     const [ active, setActive ] = useState(1)
     
@@ -27,14 +27,14 @@ const Wallet = () => {
 
                 <TouchableOpacity
                     style={styles.btnPrimary}
-                    onPress={() =>  navigation.navigate('OnboardingOne')}
+                    onPress={() =>  navigation.navigate('SellectPaymentMethod')}
                     >
                     <Text style={styles.btnText}>+ Top Up</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
                     style={styles.btnSecondary}
-                    onPress={() =>  navigation.navigate('OnboardingOne')}
+                    onPress={() =>  navigation.navigate('SellectWithdrawalMethod')}
                     >
                     <Text style={styles.btnTextSecondary}>- Withdraw</Text>
                 </TouchableOpacity>

@@ -4,7 +4,7 @@ import TopNav from '../../../components/TopNav'
 import TransactionDetails from '../../../components/TransactionDetails'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
-const Home = () => {
+const Home = ( {navigation} ) => {
 
   let ballance = 12500
   return (
@@ -19,7 +19,7 @@ const Home = () => {
             <Text style={styles.h1}>{ballance}$</Text>
             <TouchableOpacity
               style={styles.btnPrimary}
-              onPress={() =>  navigation.navigate('OnboardingOne')}
+              onPress={() =>  navigation.navigate('SellectPaymentMethod')}
             >
               <Text style={styles.btnText}>+ Top Up</Text>
           </TouchableOpacity>

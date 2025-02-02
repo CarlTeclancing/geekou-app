@@ -10,7 +10,7 @@ import { Colors, icons } from '../../constants';
 
 const Tab = createBottomTabNavigator();
 
-const TabBarCustomButton = ({ children, onPress }) => {
+const TabBarCustomButton = ({ children, onPress, navigation }) => {
   return (
     <TouchableOpacity
       style={{
