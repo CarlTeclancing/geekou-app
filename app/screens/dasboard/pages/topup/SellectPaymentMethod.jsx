@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image  } from 'react-native'
 import {React, useState }from 'react'
 import { images } from '../../../../../constants'
-import BackNav from '../../../../../components/BackNav'
+import BackNav from '../../../../components/BackNav'
 
 const SellectPaymentMethod = ( {navigation} ) => {
 
@@ -10,7 +10,7 @@ const SellectPaymentMethod = ( {navigation} ) => {
 
   return (
     <View style={styles.container}>
-      <BackNav pageTitle={'Add Funds'} />
+      <BackNav pageTitle={'Add Funds'} navigationLink={'Wallet'} />
       <Text style={styles.h2}>Sellect Payment Method</Text>
 
 

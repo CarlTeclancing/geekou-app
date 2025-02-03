@@ -1,23 +1,23 @@
 import { StyleSheet, Text, View, Image  } from 'react-native'
 import React from 'react'
-import { images } from '../constants'
+import { images } from '../../constants'
 
-const Purchase = () => {
+const OutCash = () => {
   return (
     <View style={styles.container}>
         <Image 
             style={styles.logo}
-            source={images.momo}
+            source={images.om}
         />
-      <Text style={styles.text}>MoMo</Text>
-      <Text style={styles.success}>+$15.00</Text>
+      <Text style={styles.text}>Orange Money</Text>
+      <Text style={styles.danger}>-$15.00</Text>
       <Text style={styles.success}>Success</Text>
       <Text>Wed 1:00pm</Text>
     </View>
   )
 }
 
-export default Purchase
+export default OutCash
 
 const styles = StyleSheet.create({
     container:{

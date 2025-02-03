@@ -1,23 +1,23 @@
 import { StyleSheet, Text, View, Image  } from 'react-native'
 import React from 'react'
-import { images } from '../constants'
+import { images } from '../../constants'
 
-const TransactionDetails = () => {
+const Purchase = () => {
   return (
     <View style={styles.container}>
         <Image 
             style={styles.logo}
-            source={images.spotify}
+            source={images.momo}
         />
-      <Text style={styles.text}>Spotify</Text>
-      <Text style={styles.danger}>-$15.00</Text>
+      <Text style={styles.text}>MoMo</Text>
+      <Text style={styles.success}>+$15.00</Text>
       <Text style={styles.success}>Success</Text>
       <Text>Wed 1:00pm</Text>
     </View>
   )
 }
 
-export default TransactionDetails
+export default Purchase
 
 const styles = StyleSheet.create({
     container:{
@@ -29,7 +29,8 @@ const styles = StyleSheet.create({
         borderBottomWidth: 0.2,
         borderBottom:1,
         borderColor:'#D0D5DD',
-        paddingBottom:12
+        paddingBottom:12,
+        
     },
     text:{
         fontSize:14,

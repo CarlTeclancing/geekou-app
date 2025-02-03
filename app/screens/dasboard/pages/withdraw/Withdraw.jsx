@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput  } from 'react-native'
 import {React, useState }from 'react'
 import { images } from '../../../../../constants'
-import BackNav from '../../../../../components/BackNav'
+import BackNav from '../../../../components/BackNav'
 
 const Withdraw = ( {navigation} ) => {
 
-    const [active, setActive ] = useState(0)
+    const [active, setActive ] = useState(1)
 
 
   return (

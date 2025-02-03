@@ -1,12 +1,12 @@
 import { StyleSheet, Text, View, ImageBackground, Image,TouchableOpacity, ScrollView  } from 'react-native'
 import React from 'react'
-import TopNav from '../../../components/TopNav'
+import TopNav from '../../components/TopNav'
 import { images, icons } from '../../../constants'
-import TransactionDetails from '../../../components/TransactionDetails'
+import TransactionDetails from '../../components/TransactionDetails'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 
-const Cards = () => {
+const Cards = ( {navigation}) => {
   return (
 
     <SafeAreaView>
@@ -48,7 +48,7 @@ const Cards = () => {
         
                         <TouchableOpacity
                             style={styles.btnPrimary}
-                            onPress={() =>  navigation.navigate('OnboardingOne')}
+                            onPress={() =>  navigation.navigate('TopUpCard')}
                             >
                             <Text style={styles.btnText}>+ Top Up</Text>
                         </TouchableOpacity>

@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, TouchableOpacity, Image  } from 'react-native'
 import React from 'react'
 import { icons } from '../../../../../constants'
 
-const TopUpSuccess = ( {navigation }) => {
+const CardTopUpSuccess = ( {navigation }) => {
   return (
     <View style={styles.container}>
             <Image 
@@ -14,13 +14,13 @@ const TopUpSuccess = ( {navigation }) => {
         style={styles.btnPrimary}
         onPress={() =>  navigation.navigate('Home')}
       >
-        <Text style={styles.btnText}>Go Home</Text>
+        <Text style={styles.btnText}>Go Back</Text>
       </TouchableOpacity>
     </View>
   )
 }
 
-export default TopUpSuccess
+export default CardTopUpSuccess
 
 const styles = StyleSheet.create({
     container:{

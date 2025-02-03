@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import { View, ActivityIndicator, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-const LoaderScreen = () => {
+const CardTopUpLoaderScreen = () => {
   const navigation = useNavigation();
 
   useEffect(() => {
     setTimeout(() => {
-      navigation.replace('TopUpSuccess'); // Replace with your target screen name
+      navigation.replace('CardTopUpSuccess'); // Replace with your target screen name
     }, 2000); // 2 seconds delay
   }, []);
 
@@ -27,4 +27,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoaderScreen;
+export default CardTopUpLoaderScreen;

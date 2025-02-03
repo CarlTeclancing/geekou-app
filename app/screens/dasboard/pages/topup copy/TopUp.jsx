@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput  } from 'react-native'
 import {React, useState }from 'react'
 import { images } from '../../../../../constants'
-import BackNav from '../../../../../components/BackNav'
+import BackNav from '../../../../components/BackNav'
 
 const TopUp = ( {navigation} ) => {
 
@@ -56,7 +56,7 @@ const TopUp = ( {navigation} ) => {
 
       <TouchableOpacity
         style={styles.btnPrimary}
-        onPress={() =>  navigation.navigate('LoaderScreen')}
+        onPress={() =>  navigation.navigate('TopUpLoaderScreen')}
       >
         <Text style={styles.btnText}>Pay Now</Text>
       </TouchableOpacity>

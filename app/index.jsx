@@ -14,13 +14,17 @@ import Cards from './screens/dasboard/Cards';
 import Transactions from './screens/dasboard/Transactions';
 import SellectPaymentMethod from './screens/dasboard/pages/topup/SellectPaymentMethod';
 import TopUp from './screens/dasboard/pages/topup/TopUp';
-import LoaderScreen from '../components/Spinner';
+import LoaderScreen from './components/Spinner';
 import TopUpSuccess from './screens/dasboard/pages/topup/TopUpSuccess';
 import SellectWithdrawalMethod from './screens/dasboard/pages/withdraw/SellectWithdrawalMethod';
 import Withdraw from './screens/dasboard/pages/withdraw/Withdraw';
 import WithdrawlLoaderScreen from './screens/dasboard/pages/withdraw/Spinner';
 import WithdrawalSuccess from './screens/dasboard/pages/withdraw/WithdrawSuccess';
 import TopUpLoaderScreen from './screens/dasboard/pages/topup/Spinner';
+import TopUpCard from './screens/dasboard/pages/cardtopup/TopUpCard';
+import CardTopUpLoaderScreen from './screens/dasboard/pages/cardtopup/Spinner';
+import CardTopUpSuccess from './screens/dasboard/pages/cardtopup/TopUpSuccess';
+import Profile from './screens/dasboard/pages/profile/profile';
 
 const theme = {
   ...DefaultTheme.colors,
@@ -63,6 +67,14 @@ const App = () => {
         <Stack.Screen name="Withdraw" component={Withdraw} />
         <Stack.Screen name="WithdrawalSuccess" component={WithdrawalSuccess} />
         <Stack.Screen name="WithdrawlLoaderScreen" component={WithdrawlLoaderScreen} />
+
+        {/* card in pages */}
+        <Stack.Screen name="TopUpCard" component={TopUpCard} />
+        <Stack.Screen name="CardTopUpLoaderScreen" component={CardTopUpLoaderScreen} />
+        <Stack.Screen name="CardTopUpSuccess" component={CardTopUpSuccess} />
+
+        {/*profile */}
+        <Stack.Screen name="Profile" component={Profile} />
 
 
       </Stack.Navigator>

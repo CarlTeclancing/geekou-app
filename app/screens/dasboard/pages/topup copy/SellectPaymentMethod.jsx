@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput  } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, Image  } from 'react-native'
 import {React, useState }from 'react'
 import { images } from '../../../../../constants'
 import BackNav from '../../../../components/BackNav'
 
-const TopUp = ( {navigation} ) => {
+const SellectPaymentMethod = ( {navigation} ) => {
 
-    const [active, setActive ] = useState(1)
+    const [active, setActive ] = useState(0)
 
 
   return (
@@ -28,37 +28,24 @@ const TopUp = ( {navigation} ) => {
                 style={styles.text}
                 onPress={()=>setActive(1)}>Mobile Money</Text>
       </View>
-       <View style={styles.narrow}>
 
-            <Text style={styles.label}>Amount:</Text>
-            <TextInput
-                style={styles.input}
-                placeholder="Minimum 10$"
-                value=''
-                onChangeText={(text) => ''}
+      <View style={active == 2?styles.activeCol:styles.col}>
+        <Image 
+                style={styles.logo}
+                source={images.om}
             />
-        </View>
-       <View style={styles.narrow}>
 
-            <Text style={styles.label}>Mobile Number:</Text>
-            <TextInput
-                style={styles.input}
-                placeholder="Enter account number"
-                value=''
-                onChangeText={(text) => ''}
-            />
-        </View>
-        <View>
-            <Text style={styles.text}>Top-Up charge: $</Text>
-            <Text style={styles.text}>Total USD: $</Text>
-            <Text style={styles.text}>Total: XAF</Text>
-        </View>
+            <Text 
+                style={styles.text}
+                onPress={()=>setActive(2)}
+            >Orange Money</Text>
+      </View>
 
       <TouchableOpacity
         style={styles.btnPrimary}
-        onPress={() =>  navigation.navigate('TopUpLoaderScreen')}
+        onPress={() =>  navigation.navigate('TopUp')}
       >
-        <Text style={styles.btnText}>Pay Now</Text>
+        <Text style={styles.btnText}>Proceed</Text>
       </TouchableOpacity>
 
       
@@ -66,7 +53,7 @@ const TopUp = ( {navigation} ) => {
   )
 }
 
-export default TopUp
+export default SellectPaymentMethod
 
 const styles = StyleSheet.create({
     container:{
@@ -124,25 +111,5 @@ const styles = StyleSheet.create({
         padding:6,
         border:1,
         borderRadius:6
-    },
-    narrow:{
-        width:'90%',
-        marginTop:16,
-
-    },
-    input:{
-        borderWidth: 1,
-        borderColor:'#D0D5DD',
-        height: 58,
-        width:'100%',
-        borderRadius:6,
-        alignItems:'center',
-        justifyContent:'center',
-        marginTop:6,
-        
-    },
-    label:{
-        fontSize:14,
-        fontWeight:'500'
-    },
+    }
 })

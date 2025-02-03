@@ -5,7 +5,9 @@ const om = require('../assets/images/om.png');
 const profileImage = require('../assets/images/profileImage.png');
 const spotify = require('../assets/images/spotify.png');
 const visaTag = require('../assets/images/visaTag.png');
-const smallLogo = require('../assets/images/smallLogo.png')
+const smallLogo = require('../assets/images/smallLogo.png');
+const profileimg = require('../assets/images/Profileimg.png');
+
 
 
 export default{
@@ -16,5 +18,7 @@ export default{
     profileImage,
     spotify,
     visaTag,
-    smallLogo
+    smallLogo,
+    profileimg,
+    
 }

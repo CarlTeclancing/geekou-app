@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image  } from 'react-native'
 import {React, useState }from 'react'
 import { images } from '../../../../../constants'
-import BackNav from '../../../../../components/BackNav'
+import BackNav from '../../../../components/BackNav'
 
 const SellectWithdrawalMethod = ( {navigation} ) => {
 

@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native'
 import {React, useState} from 'react'
-import TopNav from '../../../components/TopNav'
-import TransactionDetails from '../../../components/TransactionDetails'
+import TopNav from '../../components/TopNav'
+import TransactionDetails from '../../components/TransactionDetails'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import Purchase from '../../../components/Purchase'
-import OutCash from '../../../components/OutCash'
+import Purchase from '../../components/Purchase'
+import OutCash from '../../components/OutCash'
 
 const Wallet = ( {navigation}) => {
 

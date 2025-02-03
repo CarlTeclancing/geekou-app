@@ -3,30 +3,31 @@ import {React, useState }from 'react'
 import { images } from '../../../../../constants'
 import BackNav from '../../../../components/BackNav'
 
-const TopUp = ( {navigation} ) => {
+const TopUpCard = ( {navigation} ) => {
 
-    const [active, setActive ] = useState(1)
+    const [active, setActive ] = useState(0)
 
 
   return (
     <View style={styles.container}>
       <BackNav pageTitle={'Add Funds'} />
-      <Text style={styles.h2}>Sellect Payment Method</Text>
 
 
-      <View 
-        style={active == 1?styles.activeCol:styles.col}
-        
-        
-        >
-        <Image 
-                style={styles.logo}
-                source={images.momo}
-            />
 
-            <Text 
-                style={styles.text}
-                onPress={()=>setActive(1)}>Mobile Money</Text>
+      <View style={active == 1?styles.activeCol:styles.col} >
+        <View>
+              <Text style={styles.h2}>Total Current Balance</Text>
+              <Text style={styles.h1}>2600$</Text>
+
+        </View>
+
+      <TouchableOpacity
+        style={styles.btnSecondary}
+        onPress={() =>  navigation.navigate('TopUp')}
+      >
+        <Text style={styles.btnSecondaryText}>+ Top Up Wallet</Text>
+      </TouchableOpacity>
+           
       </View>
        <View style={styles.narrow}>
 
@@ -38,27 +39,17 @@ const TopUp = ( {navigation} ) => {
                 onChangeText={(text) => ''}
             />
         </View>
-       <View style={styles.narrow}>
 
-            <Text style={styles.label}>Mobile Number:</Text>
-            <TextInput
-                style={styles.input}
-                placeholder="Enter account number"
-                value=''
-                onChangeText={(text) => ''}
-            />
-        </View>
         <View>
             <Text style={styles.text}>Top-Up charge: $</Text>
             <Text style={styles.text}>Total USD: $</Text>
-            <Text style={styles.text}>Total: XAF</Text>
         </View>
 
       <TouchableOpacity
         style={styles.btnPrimary}
-        onPress={() =>  navigation.navigate('TopUpLoaderScreen')}
+        onPress={() =>  navigation.navigate('CardTopUpLoaderScreen')}
       >
-        <Text style={styles.btnText}>Pay Now</Text>
+        <Text style={styles.btnText}>Top Up Card</Text>
       </TouchableOpacity>
 
       
@@ -66,7 +57,7 @@ const TopUp = ( {navigation} ) => {
   )
 }
 
-export default TopUp
+export default TopUpCard
 
 const styles = StyleSheet.create({
     container:{
@@ -93,10 +84,10 @@ const styles = StyleSheet.create({
         color:'#ffffff',
         fontSize:16
     },
-    h2:{
-        fontSize:16,
+    h1:{
+        fontSize:24,
         fontWeight:'bold',
-        marginTop:32,
+        marginTop:6,
         textAlign:'left'
     },
     text:{
@@ -107,6 +98,7 @@ const styles = StyleSheet.create({
         width:'90%',
         flexDirection:'row',
         alignItems:'center',
+        justifyContent:'space-between',
         marginTop:24,
         borderWidth: 1,
         borderColor:'#D0D5DD',
@@ -145,4 +137,17 @@ const styles = StyleSheet.create({
         fontSize:14,
         fontWeight:'500'
     },
+    btnSecondary:{
+        borderWidth:1,
+        borderColor:'#0065FF',
+        width:'40%',
+        height:48,
+        alignItems:'center',
+        justifyContent:'center',
+        borderRadius:6
+    },
+    btnSecondaryText:{
+        color:'#0065FF',
+        fontSize:14
+    }
 })
