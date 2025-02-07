@@ -1,31 +1,46 @@
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react';
+import { validateInput } from "../../contex/FormValidation"; // Import the function
 
 const SignUp = ( {navigation}) => {
+
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [number, setNumber] = useState("");
+    const [email, setEmail] = useState("");
+    const [passowrd, setPassword] = useState("");
+
+    const [error, setError] = useState("");
   return (
     <View style={styles.container}>
       <Text style={styles.h1}>Sign Up</Text>
       <Text>Please enter your details</Text>
       <View style={styles.col2}>
-        <View style={styles.col}>
-
+      <View style={styles.col}>
             <Text style={styles.label}>First Name:</Text>
             <TextInput
                 style={styles.input}
                 placeholder="ex: John"
-                value=''
-                onChangeText={(text) => ''}
+                value={firstName}
+                onChangeText={(text) => {
+                    setFirstName(text);
+                    setError(validateInput(text));
+                }}
             />
+            {error ? <Text style={{ color: "red" }}>{error}</Text> : null}
         </View>
 
         <View style={styles.col}>
 
-            <Text style={styles.label}>First Name:</Text>
+            <Text style={styles.label}>Last Name:</Text>
             <TextInput
                 style={styles.input}
                 placeholder="ex: Doe"
-                value=''
-                onChangeText={(text) => ''}
+                value={lastName}
+                onChangeText={(text) => {
+                    setLastName(text);
+                    setError(validateInput(text));
+                }}
             />
         </View>
       </View>
@@ -35,8 +50,11 @@ const SignUp = ( {navigation}) => {
             <TextInput
                 style={styles.input}
                 placeholder="Enter your email"
-                value=''
-                onChangeText={(text) => ''}
+                value={email}
+                onChangeText={(text) => {
+                    setEmail(text);
+                    setError(validateInput(text));
+                }}
             />
         </View>
 
@@ -46,8 +64,11 @@ const SignUp = ( {navigation}) => {
             <TextInput
                 style={styles.input}
                 placeholder="Enter your number"
-                value=''
-                onChangeText={(text) => ''}
+                value={number}
+                onChangeText={(text) => {
+                    setNumber(text);
+                    setError(validateInput(text));
+                }}
             />
         </View>
 
@@ -57,8 +78,11 @@ const SignUp = ( {navigation}) => {
             <TextInput
                 style={styles.input}
                 placeholder="Enter your password"
-                value=''
-                onChangeText={(text) => ''}
+                value={passowrd}
+                onChangeText={(text) => {
+                    setPassword(text);
+                    setError(validateInput(text));
+                }}
             />
         </View>
 
