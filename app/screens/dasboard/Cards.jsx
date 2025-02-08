@@ -16,8 +16,10 @@ const Cards = ( {navigation}) => {
 
             <View style={styles.container}>
                 <TopNav />
-                
-                    <Text style={styles.h2}>My Cards</Text>
+                    <View style={styles.col4}>
+                        <Text style={styles.h2}>My Cards</Text>
+                        <Image source={icons.dropDown} />
+                    </View>
                     <View style={cardAvailable === true?styles.container2:styles.none}>
 
                         <View style={styles.cardHold}>
@@ -45,6 +47,11 @@ const Cards = ( {navigation}) => {
                                 </View>
                                 
                             </ImageBackground>
+
+                            <View style={styles.col4}>
+                                <Text style={styles.text}>Card Ballance</Text>
+                                <Text style={styles.h1}>$300</Text>
+                            </View>
             
                         </View>
             
@@ -111,7 +118,8 @@ const styles = StyleSheet.create({
     container2:{
         width:'100%',
         alignItems:'center',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        marginTop:44
     },
     cardHold:{
         width:'100%',
@@ -163,8 +171,8 @@ const styles = StyleSheet.create({
       fontSize:24,
       fontWeight:'600',
       alignSelf:'left',
-      marginLeft:16,
-      marginTop:32
+      
+      
     },
     text:{
         fontSize:16
@@ -189,11 +197,19 @@ const styles = StyleSheet.create({
         width:'90%',
         flexDirection:'row',
         justifyContent:'space-between',
+        marginTop:32,
+    },
+    col4:{
+        width:'90%',
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center',
+        paddingBottom:32,
         marginTop:24
     },
     transactions:{
         width:'90%',
-        marginTop:32,
+        marginTop:24,
         
       },
       scroll:{
@@ -201,7 +217,7 @@ const styles = StyleSheet.create({
 },
     con:{
         width:'90%',
-        marginBottom:40
+        marginBottom:32
     },
     none:{
         display:'none',
