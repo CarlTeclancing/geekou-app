@@ -4,12 +4,14 @@ import { validateInput } from "../../contex/FormValidation"; // Import the funct
 
 const SignUp = ( {navigation}) => {
 
+    //form input variables
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [number, setNumber] = useState("");
     const [email, setEmail] = useState("");
     const [passowrd, setPassword] = useState("");
 
+    //set errors 
     const [error, setError] = useState("");
   return (
     <View style={styles.container}>

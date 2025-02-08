@@ -1,7 +1,16 @@
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
+import { validateInput } from "../../contex/FormValidation"; // Import the function
 
 const Login = ( {navigation}) => {
+
+    //form input variables
+    const [email, setEmail] = useState("");
+    const [passowrd, setPassword] = useState("");
+
+    //set errors 
+    const [error, setError] = useState("");
+
   return (
     <View style={styles.container}>
       <Text style={styles.h1}>Login</Text>
@@ -12,8 +21,11 @@ const Login = ( {navigation}) => {
             <TextInput
                 style={styles.input}
                 placeholder="Enter your email"
-                value=''
-                onChangeText={(text) => ''}
+                value={email}
+                onChangeText={(text) => {
+                    setEmail(text);
+                    setError(validateInput(text));
+                }}
             />
         </View>
 
@@ -23,8 +35,11 @@ const Login = ( {navigation}) => {
             <TextInput
                 style={styles.input}
                 placeholder="Enter your password"
-                value=''
-                onChangeText={(text) => ''}
+                value={passowrd}
+                onChangeText={(text) => {
+                    setPassword(text);
+                    setError(validateInput(text));
+                }}
             />
         </View>
 

@@ -1,8 +1,19 @@
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useState }from 'react'
+import { validateInput } from "../../contex/FormValidation"; // Import the function
 
 const OnboardingOne = ( {navigation}) => {
-  return (
+
+    //form input variables
+    const [country, setCountry] = useState("");
+    const [state, setState] = useState("");
+    const [postalCode, setPostalCode] = useState("");
+    const [DOB, setDOB] = useState("");
+    const [idNumber, setIdNumber] = useState("");
+
+    const [error, setError] = useState("");
+
+    return (
     <View style={styles.container}>
       <Text style={styles.h1}>Setting ....</Text>
       <Text>Please enter your details</Text>
@@ -13,8 +24,11 @@ const OnboardingOne = ( {navigation}) => {
             <TextInput
                 style={styles.input}
                 placeholder="Enter your Country"
-                value=''
-                onChangeText={(text) => ''}
+                value={country}
+                onChangeText={(text) => {
+                    setCountry(text);
+                    setError(validateInput(text));
+                }}
             />
         </View>
       <View style={styles.col2}>
@@ -24,8 +38,11 @@ const OnboardingOne = ( {navigation}) => {
             <TextInput
                 style={styles.input}
                 placeholder="ex: Center"
-                value=''
-                onChangeText={(text) => ''}
+                value={state}
+                onChangeText={(text) => {
+                    setState(text);
+                    setError(validateInput(text));
+                }}
             />
         </View>
 
@@ -35,8 +52,11 @@ const OnboardingOne = ( {navigation}) => {
             <TextInput
                 style={styles.input}
                 placeholder="ex: 11101"
-                value=''
-                onChangeText={(text) => ''}
+                value={postalCode}
+                onChangeText={(text) => {
+                    setPostalCode(text);
+                    setError(validateInput(text));
+                }}
             />
         </View>
       </View>
@@ -48,8 +68,11 @@ const OnboardingOne = ( {navigation}) => {
             <TextInput
                 style={styles.input}
                 placeholder="yyyy-mm-dd"
-                value=''
-                onChangeText={(text) => ''}
+                value={DOB}
+                onChangeText={(text) => {
+                    setDOB(text);
+                    setError(validateInput(text));
+                }}
             />
         </View>
 
@@ -59,8 +82,11 @@ const OnboardingOne = ( {navigation}) => {
             <TextInput
                 style={styles.input}
                 placeholder="ex: 1234"
-                value=''
-                onChangeText={(text) => ''}
+                value={idNumber}
+                onChangeText={(text) => {
+                    setIdNumber(text);
+                    setError(validateInput(text));
+                }}
             />
         </View>
       </View>
