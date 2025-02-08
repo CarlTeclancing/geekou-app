@@ -10,7 +10,8 @@ const transactionsLight = require('../assets/icons/transactions-light.png');
 const back = require('../assets/icons/back.png')
 const success = require('../assets/icons/success.png');
 const piechart = require('../assets/icons/Piechart.png');
-const right = require('../assets/icons/right.png')
+const right = require('../assets/icons/right.png');
+const nocard = require('../assets/icons/nocard.png');
 
 export default{
     CardDark,
@@ -25,5 +26,6 @@ export default{
     back,
     success,
     piechart,
-    right
+    right,
+    nocard,
 }
