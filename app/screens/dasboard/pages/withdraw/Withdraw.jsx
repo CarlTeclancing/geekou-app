@@ -1,11 +1,18 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput  } from 'react-native'
-import {React, useState }from 'react'
-import { images } from '../../../../../constants'
-import BackNav from '../../../../components/BackNav'
+import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput  } from 'react-native';
+import {React, useState }from 'react';
+import { images } from '../../../../../constants';
+import BackNav from '../../../../components/BackNav';
+import { validateInput } from "../../../../../contex/FormValidation"; // Import the function
 
 const Withdraw = ( {navigation} ) => {
 
     const [active, setActive ] = useState(1)
+
+    const [amount, setAmount] = useState('');
+    const [number, setNumber] = useState('');
+
+    //set errors 
+    const [error, setError] = useState("");
 
 
   return (
@@ -34,8 +41,11 @@ const Withdraw = ( {navigation} ) => {
             <TextInput
                 style={styles.input}
                 placeholder="Minimum 10$"
-                value=''
-                onChangeText={(text) => ''}
+                value={amount}
+                onChangeText={(text) => {
+                    setAmount(text);
+                    setError(validateInput(text));
+                }}
             />
         </View>
        <View style={styles.narrow}>
@@ -44,8 +54,11 @@ const Withdraw = ( {navigation} ) => {
             <TextInput
                 style={styles.input}
                 placeholder="Enter account number"
-                value=''
-                onChangeText={(text) => ''}
+                value={number}
+                onChangeText={(text) => {
+                    setNumber(text);
+                    setError(validateInput(text));
+                }}
             />
         </View>
         <View>

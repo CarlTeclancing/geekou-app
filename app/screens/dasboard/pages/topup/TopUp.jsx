@@ -2,12 +2,16 @@ import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput  } from 'rea
 import {React, useState }from 'react'
 import { images } from '../../../../../constants'
 import BackNav from '../../../../components/BackNav'
+import { validateInput } from "../../../../../contex/FormValidation"; // Import the function
 
 const TopUp = ( {navigation} ) => {
 
-    const [active, setActive ] = useState(1)
+    const [active, setActive ] = useState(1);
+    const [amount, setAmount] = useState('');
+    const [number, setNumber] = useState('');
 
-
+    //set errors 
+    const [error, setError] = useState("");
   return (
     <View style={styles.container}>
       <BackNav pageTitle={'Add Funds'} />
@@ -34,8 +38,11 @@ const TopUp = ( {navigation} ) => {
             <TextInput
                 style={styles.input}
                 placeholder="Minimum 10$"
-                value=''
-                onChangeText={(text) => ''}
+                value={amount}
+                onChangeText={(text) => {
+                    setAmount(text);
+                    setError(validateInput(text));
+                }}
             />
         </View>
        <View style={styles.narrow}>
@@ -44,8 +51,11 @@ const TopUp = ( {navigation} ) => {
             <TextInput
                 style={styles.input}
                 placeholder="Enter account number"
-                value=''
-                onChangeText={(text) => ''}
+                value={number}
+                onChangeText={(text) => {
+                    setNumber(text);
+                    setError(validateInput(text));
+                }}
             />
         </View>
         <View>

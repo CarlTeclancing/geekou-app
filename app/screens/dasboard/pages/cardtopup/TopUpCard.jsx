@@ -2,11 +2,16 @@ import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput  } from 'rea
 import {React, useState }from 'react'
 import { images } from '../../../../../constants'
 import BackNav from '../../../../components/BackNav'
+import { validateInput } from "../../../../../contex/FormValidation"; // Import the function
 
 const TopUpCard = ( {navigation} ) => {
 
     const [active, setActive ] = useState(0)
+    const [amount, setAmount] = useState('');
 
+
+    //set errors 
+    const [error, setError] = useState("");
 
   return (
     <View style={styles.container}>
@@ -35,8 +40,11 @@ const TopUpCard = ( {navigation} ) => {
             <TextInput
                 style={styles.input}
                 placeholder="Minimum 10$"
-                value=''
-                onChangeText={(text) => ''}
+                value={amount}
+                onChangeText={(text) => {
+                    setAmount(text);
+                    setError(validateInput(text));
+                }}
             />
         </View>
 
