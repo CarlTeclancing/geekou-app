@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-nativ
 import React, { useState } from 'react'
 import { validateInput } from "../../contex/FormValidation"; // Import the function
 
-const Login = ( {navigation}) => {
+const ForgotPassword = ( {navigation}) => {
 
     //form input variables
     const [email, setEmail] = useState("");
@@ -13,8 +13,8 @@ const Login = ( {navigation}) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.h1}>Login</Text>
-      <Text>Welcome back! Please enter your detials.</Text>
+      <Text style={styles.h1}>Reset Password</Text>
+      <Text>Welcome back! Please enter your email.</Text>
       <View style={styles.narrow}>
 
             <Text style={styles.label}>Email:</Text>
@@ -29,45 +29,26 @@ const Login = ( {navigation}) => {
             />
         </View>
 
-        <View style={styles.narrow}>
-
-            <Text style={styles.label}>Password:</Text>
-            <TextInput
-                style={styles.input}
-                placeholder="Enter your password"
-                value={passowrd}
-                onChangeText={(text) => {
-                    setPassword(text);
-                    setError(validateInput(text));
-                }}
-            />
-        </View>
-        <Text style={styles.text}>Forgot password? 
-        <Text 
-            style={styles.gotoDanger}
-            onPress={() =>  navigation.navigate('ForgotPassword')}
-            >Reset Password</Text>
-      </Text>
 
         <TouchableOpacity
         style={styles.btnPrimary}
-        onPress={() =>  navigation.navigate('Home')}
+        onPress={() =>  navigation.navigate('Verifiction')}
       >
-        <Text style={styles.btnText}>Login</Text>
+        <Text style={styles.btnText}>Continue</Text>
       </TouchableOpacity>
 
       <Text style={styles.text}>Don't have an account? 
         <Text 
             style={styles.goto}
-            onPress={() =>  navigation.navigate('SignUp')}
-            >Sign up</Text>
+            onPress={() =>  navigation.navigate('Login')}
+            >Go Back To Login</Text>
       </Text>
     </View>
     
   )
 }
 
-export default Login
+export default ForgotPassword
 
 const styles = StyleSheet.create({
     container:{

@@ -8,7 +8,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 
 const Cards = ( {navigation}) => {
 
-    let cardAvailable = true;
+    let cardAvailable = false;
   return (
 
     <SafeAreaView>

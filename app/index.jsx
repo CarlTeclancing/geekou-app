@@ -25,6 +25,9 @@ import TopUpCard from './screens/dasboard/pages/cardtopup/TopUpCard';
 import CardTopUpLoaderScreen from './screens/dasboard/pages/cardtopup/Spinner';
 import CardTopUpSuccess from './screens/dasboard/pages/cardtopup/TopUpSuccess';
 import Profile from './screens/dasboard/pages/profile/profile';
+import ForgotPassword from './screens/ForgotPassword';
+import Verifiction from './screens/Verifiction';
+import VerificationLoader from './screens/Spinner';
 
 const theme = {
   ...DefaultTheme.colors,
@@ -46,6 +49,9 @@ const App = () => {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="OnboardingOne" component={OnboardingOne} />
+        <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+        <Stack.Screen name="Verifiction" component={Verifiction} />
+        <Stack.Screen name="VerificationLoader" component={VerificationLoader} />
 
         {/* Tabs*/}
         <Stack.Screen name="Home" component={Tabs} />
