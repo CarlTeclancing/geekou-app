@@ -1,30 +1,24 @@
 import { StyleSheet, Text, View, ImageBackground, Image,TouchableOpacity, ScrollView  } from 'react-native'
 import React from 'react'
-import TopNav from '../../components/TopNav'
-import { images, icons } from '../../../constants'
-import TransactionDetails from '../../components/TransactionDetails'
+import TopNav from '../../../../components/TopNav'
+import { images, icons } from '../../../../../constants'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import BackNav from '../../../../components/BackNav'
 
 
-const Cards = ( {navigation}) => {
+const CardDetails = ( {navigation}) => {
 
-    let cardAvailable = false;
+    
   return (
 
     <SafeAreaView>
         <ScrollView style={styles.scroll}>
 
             <View style={styles.container}>
-                <TopNav />
+                <BackNav pageTitle={'Card Details'} />
                     <View style={styles.col4}>
-                        <Text style={styles.h2}>My Cards</Text>
-                        <TouchableOpacity
-                                style={styles.btnPrimary}
-                                onPress={() =>  navigation.navigate('CardDetails')}
-                                >
-                                <Text style={styles.btnText}>Card Details</Text>
-                            </TouchableOpacity>
-                        {/*<Image source={icons.dropDown} /> */}
+                        <Text style={styles.h2}>Card Details</Text>
+
                     </View>
                     <View style={cardAvailable === true?styles.container2:styles.none}>
 
@@ -54,55 +48,18 @@ const Cards = ( {navigation}) => {
                                 
                             </ImageBackground>
 
-                            <View style={styles.col4}>
-                                <Text style={styles.text}>Card Ballance</Text>
-                                <Text style={styles.h1}>$300</Text>
-                            </View>
             
                         </View>
             
                         <View style={styles.col3}>
+                            <Text style={styles.text}>No transaction fees</Text>
+                            <Text style={styles.text}>No charges for failed transactions</Text>
+                            <Text style={styles.text}>Excellent for all types of payments online except crypto</Text>
+                            <Text style={styles.text}>1.5% card top-up charge only</Text>
+                            <Text style={styles.text}>$1.5 monthly maintenance fee</Text>
             
-                            <TouchableOpacity
-                                style={styles.btnPrimary}
-                                onPress={() =>  navigation.navigate('TopUpCard')}
-                                >
-                                <Text style={styles.btnText}>+ Top Up</Text>
-                            </TouchableOpacity>
-            
-                            <TouchableOpacity
-                                style={styles.btnSecondary}
-                                onPress={() =>  navigation.navigate('OnboardingOne')}
-                                >
-                                <Text style={styles.btnTextSecondary}>- Withdraw</Text>
-                            </TouchableOpacity>
                         </View>
-            
-                        <View style={styles.transactions}>
-                        <Text style={styles.h2}>Recent Transactions</Text>
-                            <TransactionDetails />
-                            <TransactionDetails />
-                            <TransactionDetails />
-                            <TransactionDetails />
-                            <TransactionDetails />
-                        </View>
-            
-                    </View>
-                    <View  style={cardAvailable === false?styles.con:styles.none}>
-                        <Image 
-                            style={styles.nocard}
-                            source={icons.nocard}
-                        />
-                        
-                        <Text style={styles.h2left}>You do not have any card available </Text>
-                        <TouchableOpacity
-                                style={styles.btnPrimary100}
-                                onPress={() =>  navigation.navigate('BuyCard')}
-                                >
-                                <Text style={styles.btnText}>Buy $ Card Now</Text>
-                        </TouchableOpacity>
-                    </View>
-
+                </View>
                 
             </View>
         </ScrollView>
@@ -112,7 +69,7 @@ const Cards = ( {navigation}) => {
       )
 }
 
-export default Cards
+export default CardDetails
 
 const styles = StyleSheet.create({
     container:{
@@ -201,7 +158,7 @@ const styles = StyleSheet.create({
     },
     col3:{
         width:'90%',
-        flexDirection:'row',
+        flexDirection:'column',
         justifyContent:'space-between',
         marginTop:32,
     },
@@ -219,7 +176,8 @@ const styles = StyleSheet.create({
         
       },
       scroll:{
-        marginBottom:50
+        marginBottom:50,
+        paddingTop:24
 },
     con:{
         width:'90%',

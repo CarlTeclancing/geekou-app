@@ -28,6 +28,8 @@ import Profile from './screens/dasboard/pages/profile/profile';
 import ForgotPassword from './screens/ForgotPassword';
 import Verifiction from './screens/Verifiction';
 import VerificationLoader from './screens/Spinner';
+import BuyCard from './screens/dasboard/pages/card/BuyCard';
+import CardDetails from './screens/dasboard/pages/card/CardDetails';
 
 const theme = {
   ...DefaultTheme.colors,
@@ -78,6 +80,8 @@ const App = () => {
         <Stack.Screen name="TopUpCard" component={TopUpCard} />
         <Stack.Screen name="CardTopUpLoaderScreen" component={CardTopUpLoaderScreen} />
         <Stack.Screen name="CardTopUpSuccess" component={CardTopUpSuccess} />
+        <Stack.Screen name="BuyCard" component={BuyCard} />
+        <Stack.Screen name="CardDetails" component={CardDetails} />
 
         {/*profile */}
         <Stack.Screen name="Profile" component={Profile} />

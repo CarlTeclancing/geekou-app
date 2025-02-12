@@ -7,7 +7,9 @@ const spotify = require('../assets/images/spotify.png');
 const visaTag = require('../assets/images/visaTag.png');
 const smallLogo = require('../assets/images/smallLogo.png');
 const profileimg = require('../assets/images/Profileimg.png');
-const nocard = require('../assets/icons/nocard.png');
+const mastercard = require('../assets/images/mastercard.png');
+const visacardicon = require('../assets/images/visacardicon.png');
+
 
 
 
@@ -21,6 +23,8 @@ export default{
     visaTag,
     smallLogo,
     profileimg,
-    nocard,
+    mastercard,
+    visacardicon
+    
     
 }

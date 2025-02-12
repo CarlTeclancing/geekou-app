@@ -1,9 +1,9 @@
-let firstName;
-let lastName;
-let email;
-let number;
-let password;
-let e;
+let firstName: string;
+let lastName: string;
+let email: string;
+let number: string;
+let password: string;
+let e: string;
 
 export const validateInput = (value: string): string => {
     // Example: Ensure input is not empty
