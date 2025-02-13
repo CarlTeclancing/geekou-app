@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, ImageBackground, Image,TouchableOpacity, ScrollView  } from 'react-native'
-import React from 'react'
+import React, {useState} from 'react'
 import TopNav from '../../../../components/TopNav'
 import { images, icons } from '../../../../../constants'
 import { SafeAreaView } from 'react-native-safe-area-context'
@@ -7,7 +7,7 @@ import BackNav from '../../../../components/BackNav'
 
 
 const CardDetails = ( {navigation}) => {
-
+    const [cardAvailable, setCardAvailable] = useState(true);
     
   return (
 
@@ -82,7 +82,6 @@ const styles = StyleSheet.create({
         width:'100%',
         alignItems:'center',
         flexDirection: 'column',
-        marginTop:44
     },
     cardHold:{
         width:'100%',

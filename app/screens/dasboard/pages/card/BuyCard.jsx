@@ -1,12 +1,16 @@
 import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import TopNav from '../../../../components/TopNav'
 import BackNav from '../../../../components/BackNav'
 import { images } from '../../../../../constants'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
-const BuyCard = ( {navigation} ) => {
+const BuyCard = ( {navigation,} ) => {
+
+    const [  cardAvailable, setCardAvailable ] = useState(true)
   return (
+
+  
 
     <SafeAreaView>
         <ScrollView>
@@ -33,7 +37,10 @@ const BuyCard = ( {navigation} ) => {
 
                         <TouchableOpacity
                             style={styles.btnPrimary}
-                            onPress={() => navigation.navigate('VerificationLoader')}
+                            onPress={() => {
+                                navigation.navigate('BuyCardLoaderScreen')
+                                setCardAvailable(true);
+                            }}
                         >
                             <Text style={styles.btnText}>Buy Card Now</Text>
                         </TouchableOpacity>
@@ -41,11 +48,11 @@ const BuyCard = ( {navigation} ) => {
                     </View>
                     <View style={styles.card}>
                         <View style={styles.row}>
-                            <Image source={images.mastercard} />
+                            <Image source={images.visacardicon} />
 
                             <Text style={styles.h1}>General Payment Card</Text>
                         </View>
-                        <Text style={styles.h1Primary}>Buy for 7$ with 3$ Card Balance</Text>
+                        <Text style={styles.h1Primary}>Buy for 12$ with 3$ Card Balance</Text>
 
                         <Text style={styles.text}>No transaction fees</Text>
                         <Text style={styles.text}>No charges for failed transactions</Text>
@@ -55,7 +62,7 @@ const BuyCard = ( {navigation} ) => {
 
                         <TouchableOpacity
                             style={styles.btnPrimary}
-                            onPress={() => navigation.navigate('VerificationLoader')}
+                            onPress={() => navigation.navigate('BuyCardLoaderScreen')}
                         >
                             <Text style={styles.btnText}>Buy Card Now</Text>
                         </TouchableOpacity>

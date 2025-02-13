@@ -30,6 +30,7 @@ import Verifiction from './screens/Verifiction';
 import VerificationLoader from './screens/Spinner';
 import BuyCard from './screens/dasboard/pages/card/BuyCard';
 import CardDetails from './screens/dasboard/pages/card/CardDetails';
+import BuyCardLoaderScreen from './screens/dasboard/pages/card/Spinner';
 
 const theme = {
   ...DefaultTheme.colors,
@@ -82,6 +83,8 @@ const App = () => {
         <Stack.Screen name="CardTopUpSuccess" component={CardTopUpSuccess} />
         <Stack.Screen name="BuyCard" component={BuyCard} />
         <Stack.Screen name="CardDetails" component={CardDetails} />
+        <Stack.Screen name="BuyCardLoaderScreen" component={BuyCardLoaderScreen} />
+
 
         {/*profile */}
         <Stack.Screen name="Profile" component={Profile} />

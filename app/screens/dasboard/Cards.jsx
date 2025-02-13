@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, ImageBackground, Image,TouchableOpacity, ScrollView  } from 'react-native'
-import React from 'react'
+import React, {useState} from 'react'
 import TopNav from '../../components/TopNav'
 import { images, icons } from '../../../constants'
 import TransactionDetails from '../../components/TransactionDetails'
@@ -8,7 +8,9 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 
 const Cards = ( {navigation}) => {
 
-    let cardAvailable = false;
+    const [cardAvailable, setCardAvailable] = useState(true);
+
+
   return (
 
     <SafeAreaView>
@@ -19,7 +21,7 @@ const Cards = ( {navigation}) => {
                     <View style={styles.col4}>
                         <Text style={styles.h2}>My Cards</Text>
                         <TouchableOpacity
-                                style={styles.btnPrimary}
+                                style={cardAvailable === false?styles.none:styles.btnPrimary}
                                 onPress={() =>  navigation.navigate('CardDetails')}
                                 >
                                 <Text style={styles.btnText}>Card Details</Text>
