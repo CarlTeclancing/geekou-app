@@ -1,15 +1,28 @@
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import { validateInput } from "../../contex/FormValidation"; // Import the function
+import { loginUser } from '../../actions/api';
 
 const Login = ( {navigation}) => {
 
     //form input variables
     const [email, setEmail] = useState("");
-    const [passowrd, setPassword] = useState("");
+    const [password, setPassword] = useState("");
 
     //set errors 
     const [error, setError] = useState("");
+
+    //handle login function
+      const handleLogin = async () => {
+        try {
+          const data = await loginUser(email, password);
+          Alert.alert("Success", "Login Successful");
+          navigation.navigate('Home')
+          console.log("User Token:", data.token);
+        } catch (error) {
+          Alert.alert("Error", "Failed to login");
+        }
+      };
 
   return (
     <View style={styles.container}>
@@ -35,7 +48,7 @@ const Login = ( {navigation}) => {
             <TextInput
                 style={styles.input}
                 placeholder="Enter your password"
-                value={passowrd}
+                value={password}
                 onChangeText={(text) => {
                     setPassword(text);
                     setError(validateInput(text));
@@ -51,7 +64,7 @@ const Login = ( {navigation}) => {
 
         <TouchableOpacity
         style={styles.btnPrimary}
-        onPress={() =>  navigation.navigate('Home')}
+        onPress={handleLogin}
       >
         <Text style={styles.btnText}>Login</Text>
       </TouchableOpacity>

@@ -5,11 +5,11 @@ import { validateInput } from "../../contex/FormValidation"; // Import the funct
 const SignUp = ( {navigation}) => {
 
     //form input variables
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [number, setNumber] = useState("");
+    const [first_name, setFirstName] = useState("");
+    const [last_name, setLastName] = useState("");
+    const [phone_number, setNumber] = useState("");
     const [email, setEmail] = useState("");
-    const [passowrd, setPassword] = useState("");
+    const [password, setPassword] = useState("");
 
     //set errors 
     const [error, setError] = useState("");
@@ -23,7 +23,7 @@ const SignUp = ( {navigation}) => {
             <TextInput
                 style={styles.input}
                 placeholder="ex: John"
-                value={firstName}
+                value={first_name}
                 onChangeText={(text) => {
                     setFirstName(text);
                     setError(validateInput(text));
@@ -38,7 +38,7 @@ const SignUp = ( {navigation}) => {
             <TextInput
                 style={styles.input}
                 placeholder="ex: Doe"
-                value={lastName}
+                value={last_name}
                 onChangeText={(text) => {
                     setLastName(text);
                     setError(validateInput(text));
@@ -66,7 +66,7 @@ const SignUp = ( {navigation}) => {
             <TextInput
                 style={styles.input}
                 placeholder="Enter your number"
-                value={number}
+                value={phone_number}
                 onChangeText={(text) => {
                     setNumber(text);
                     setError(validateInput(text));
@@ -80,7 +80,7 @@ const SignUp = ( {navigation}) => {
             <TextInput
                 style={styles.input}
                 placeholder="Enter your password"
-                value={passowrd}
+                value={password}
                 onChangeText={(text) => {
                     setPassword(text);
                     setError(validateInput(text));
@@ -90,6 +90,15 @@ const SignUp = ( {navigation}) => {
 
         <TouchableOpacity
         style={styles.btnPrimary}
+        state={
+            {
+                first_name,
+                last_name,
+                email,
+                phone_number,
+                password,
+            }
+        }
         onPress={() =>  navigation.navigate('OnboardingOne')}
       >
         <Text style={styles.btnText}>Sign Up</Text>

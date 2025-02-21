@@ -1,17 +1,49 @@
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
 import React, { useState }from 'react'
 import { validateInput } from "../../contex/FormValidation"; // Import the function
+import { registerUser } from '../../actions/api';
 
 const OnboardingOne = ( {navigation}) => {
+
+    const { userData } = route.params; // Get passed data
+    first_name = userData.first_name;
+    last_name = userData.last_name;
+    email = userData.email;
+    phone_number = userData.phone_number;
+    password = userData.password;
+
 
     //form input variables
     const [country, setCountry] = useState("");
     const [state, setState] = useState("");
     const [postalCode, setPostalCode] = useState("");
-    const [DOB, setDOB] = useState("");
+    const [dob, setDOB] = useState("");
     const [idNumber, setIdNumber] = useState("");
 
+    //set errors 
     const [error, setError] = useState("");
+
+
+    const handleSignup = async () => {
+        try {
+          const data = await registerUser(
+            first_name,
+            last_name,
+            email,
+            phone_number,
+            password,
+            country,
+            state,
+            postalCode,
+            dob,
+            idNumber,
+          );
+          Alert.alert("Success", data.message);
+          navigation.navigate("Login");
+        } catch (error) {
+          Alert.alert("Error", "Failed to register");
+        }
+      };
 
     return (
     <View style={styles.container}>
@@ -68,7 +100,7 @@ const OnboardingOne = ( {navigation}) => {
             <TextInput
                 style={styles.input}
                 placeholder="yyyy-mm-dd"
-                value={DOB}
+                value={dob}
                 onChangeText={(text) => {
                     setDOB(text);
                     setError(validateInput(text));
