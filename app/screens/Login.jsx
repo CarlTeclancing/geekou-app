@@ -17,7 +17,7 @@ const Login = ( {navigation}) => {
         try {
           const data = await loginUser(email, password);
           Alert.alert("Success", "Login Successful");
-          navigation.navigate('Home')
+          
           console.log("User Token:", data.token);
         } catch (error) {
           Alert.alert("Error", "Failed to login");
@@ -64,7 +64,7 @@ const Login = ( {navigation}) => {
 
         <TouchableOpacity
         style={styles.btnPrimary}
-        onPress={handleLogin}
+        onPress={()=> navigation.navigate('Home')}
       >
         <Text style={styles.btnText}>Login</Text>
       </TouchableOpacity>

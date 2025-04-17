@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-nativ
 import React, { useState } from 'react';
 import { validateInput } from "../../contex/FormValidation"; // Import the function
 
-const SignUp = ( {navigation}) => {
+const SignUp = ( {navigation} ) => {
 
     //form input variables
     const [first_name, setFirstName] = useState("");
@@ -90,15 +90,7 @@ const SignUp = ( {navigation}) => {
 
         <TouchableOpacity
         style={styles.btnPrimary}
-        state={
-            {
-                first_name,
-                last_name,
-                email,
-                phone_number,
-                password,
-            }
-        }
+        
         onPress={() =>  navigation.navigate('OnboardingOne')}
       >
         <Text style={styles.btnText}>Sign Up</Text>
@@ -106,7 +98,7 @@ const SignUp = ( {navigation}) => {
 
       <Text style={styles.text}>Already have an account? 
         <Text 
-            style={styles.goto}
+            
             onPress={() =>  navigation.navigate('Login')}
             >Goto LogIn</Text>
       </Text>

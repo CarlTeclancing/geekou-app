@@ -1,16 +1,17 @@
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
-import React, { useState }from 'react'
+import React, { useState }from 'react';
 import { validateInput } from "../../contex/FormValidation"; // Import the function
 import { registerUser } from '../../actions/api';
 
-const OnboardingOne = ( {navigation}) => {
 
-    const { userData } = route.params; // Get passed data
-    first_name = userData.first_name;
-    last_name = userData.last_name;
-    email = userData.email;
-    phone_number = userData.phone_number;
-    password = userData.password;
+const OnboardingOne = ( {navigation} ) => {
+
+    // const { userData } = route.params; // Get passed data
+    // const firstName = userData.first_name;
+    // const lastName = userData.last_name;
+    // const email = userData.email;
+    // const phoneNumber = userData.phone_number;
+    // const password = userData.password;
 
 
     //form input variables
@@ -24,26 +25,26 @@ const OnboardingOne = ( {navigation}) => {
     const [error, setError] = useState("");
 
 
-    const handleSignup = async () => {
-        try {
-          const data = await registerUser(
-            first_name,
-            last_name,
-            email,
-            phone_number,
-            password,
-            country,
-            state,
-            postalCode,
-            dob,
-            idNumber,
-          );
-          Alert.alert("Success", data.message);
-          navigation.navigate("Login");
-        } catch (error) {
-          Alert.alert("Error", "Failed to register");
-        }
-      };
+    // const handleSignup = async () => {
+    //     try {
+    //       const data = await registerUser(
+    //         firstName,
+    //         lastName,
+    //         email,
+    //         phoneNumber,
+    //         password,
+    //         country,
+    //         state,
+    //         postalCode,
+    //         dob,
+    //         idNumber,
+    //       );
+    //       Alert.alert("Success", data.message);
+         
+    //     } catch (error) {
+    //       Alert.alert("Error", "Failed to register");
+    //     }
+    //   };
 
     return (
     <View style={styles.container}>
@@ -125,7 +126,7 @@ const OnboardingOne = ( {navigation}) => {
 
         <TouchableOpacity
         style={styles.btnPrimary}
-        onPress={() =>  navigation.navigate('Home')}
+        onPress={()=> navigation.navigate('Home')}
       >
         <Text style={styles.btnText}>Proceed</Text>
       </TouchableOpacity>
