@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { View, ActivityIndicator, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-const LoaderScreen = () => {
+const TopUpLoaderScreen = () => {
   const navigation = useNavigation();
 
   useEffect(() => {
@@ -27,4 +27,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoaderScreen;
+export default TopUpLoaderScreen;
