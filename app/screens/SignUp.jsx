@@ -10,6 +10,7 @@ const SignUp = ( {navigation} ) => {
     const [phone_number, setNumber] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
 
     //set errors 
     const [error, setError] = useState("");
@@ -87,6 +88,19 @@ const SignUp = ( {navigation} ) => {
                 }}
             />
         </View>
+        <View style={styles.narrow}>
+
+            <Text style={styles.label}>Confirm Password:</Text>
+            <TextInput
+                style={styles.input}
+                placeholder="Enter your password"
+                value={confirmPassword}
+                onChangeText={(text) => {
+                    setConfirmPassword(text);
+                    setError(validateInput(text));
+                }}
+            />
+        </View>
 
         <TouchableOpacity
         style={styles.btnPrimary}
@@ -96,12 +110,18 @@ const SignUp = ( {navigation} ) => {
         <Text style={styles.btnText}>Sign Up</Text>
       </TouchableOpacity>
 
+      <TouchableOpacity style={styles.btnSecondary}>
+        <Text>Continue with Google </Text>
+      </TouchableOpacity>
+
       <Text style={styles.text}>Already have an account? 
         <Text 
-            
+            style={styles.goto}
             onPress={() =>  navigation.navigate('Login')}
             >Goto LogIn</Text>
       </Text>
+
+
     </View>
     
   )
@@ -170,5 +190,15 @@ const styles = StyleSheet.create({
         fontWeight: '800',
         marginLeft:4,
         margin:12
-    }
+    },
+        btnSecondary:{
+        borderColor:'#0065FF',
+        borderWidth:1,
+        borderRadius:6,
+        width:'90%',
+        marginTop:24,
+        height:48,
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
 })
