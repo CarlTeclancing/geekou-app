@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity, navigation } from 'react-native'
 import React from 'react'
 import BackNav from '../../../../components/BackNav'
 import { images,icons } from '../../../../../constants'
@@ -6,7 +6,7 @@ import { images,icons } from '../../../../../constants'
 
 
 
-const Profile = () => {
+const Profile = ( {navigation} ) => {
   return (
     <View style={styles.container}>
         <BackNav pageTitle={'Profile'} />
@@ -51,12 +51,17 @@ const Profile = () => {
             </View>
         </View>
 
-        <View style={styles.sec1}>
+        <View>
+        <TouchableOpacity 
+            style={styles.sec1}
+            onPress={() =>  navigation.navigate('Login')}
+        >
                 <Text>Logout</Text>
                 <Image 
                     style={styles.go}
                      source={icons.right}
                 />
+        </TouchableOpacity>
         </View>
       
     </View>

@@ -126,7 +126,7 @@ const OnboardingOne = ( {navigation} ) => {
 
         <TouchableOpacity
         style={styles.btnPrimary}
-        onPress={()=> navigation.navigate('Home')}
+        onPress={()=> navigation.navigate('Verifiction')}
       >
         <Text style={styles.btnText}>Proceed</Text>
       </TouchableOpacity>
