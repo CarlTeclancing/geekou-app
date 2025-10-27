@@ -28,11 +28,23 @@ const Home = ( {navigation} ) => {
             </TouchableOpacity>
               
           </View>
-          <View>
-            <Image source={icons.piechart}/>
-          </View>
+   
+            <Image source={icons.piechart} style={styles.img} />
+
           
           </View>
+
+          <View style={styles.flexRow}>
+            <Text style={styles.h2}>Cards (1)</Text>
+            <TouchableOpacity style={styles.btnSecondary}>
+              <Text>Buy Card</Text>
+            </TouchableOpacity>
+          </View>
+
+            <TouchableOpacity style={styles.btnSecondary100}>
+              <Text style={styles.btnText}>Refere and Earn Get Your Link</Text>
+            </TouchableOpacity>
+
 
           <View style={styles.transactions}>
             <Text style={styles.h2}>Recent Transactions</Text>
@@ -62,6 +74,8 @@ const styles = StyleSheet.create({
     width:'90%',
     padding:16,
     borderColor:'#0065FF',
+    color:'#fff',
+    backgroundColor:'#0065FF',
     borderWidth:1,
     marginTop:44,
     borderRadius:6,
@@ -74,28 +88,71 @@ const styles = StyleSheet.create({
 
   },
   btnPrimary:{
-    backgroundColor:'#0065FF',
+    backgroundColor:'#ffffffff',
     width:'100%',
     height:48,
     borderRadius:6,
     alignItems: 'center',
     justifyContent: 'center',
     marginTop:30,
-},
+    
+  },
+  btnSecondary:{
+    borderColor:'#ffffffff',
+    backgroundColor:'#fff',
+    borderWidth:1,
+    borderRadius:6,
+    width:100,
+    height:48,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  btnSecondary100:{
+    borderColor:'#ffffffff',
+    backgroundColor:'#fff',
+    borderWidth:1,
+    borderRadius:6,
+    marginTop:23,
+    width:'90%',
+    height:48,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  flexRow:{
+    display:'flex',
+    width:'90%',
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'space-between',
+    backgroundColor:'#c6ddffff',
+    padding:12,
+    marginTop:24,
+    borderRadius:6
+  },
+
 btnText:{
-    color:'#ffffff',
-    fontSize:16
+    color:'#0065FF',
+    fontSize:16,
+    fontWeight:'bold'
 },
 h1:{
     fontSize:44,
     fontWeight:'bold',
+    color:'white'
 },
 h2:{
   fontSize:24,
   fontWeight:'600',
 },
 text:{
-    fontSize:16
+    fontSize:16,
+    color:'white'
+},
+img:{
+  objectFit:'fill',
+  marginRight:20,
+  width:'40%',
+  height:'100%'
 },
 transactions:{
   width:'90%',
