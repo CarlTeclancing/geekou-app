@@ -9,6 +9,7 @@ const smallLogo = require('../assets/images/smallLogo.png');
 const profileimg = require('../assets/images/Profileimg.png');
 const mastercard = require('../assets/images/mastercard.png');
 const visacardicon = require('../assets/images/visacardicon.png');
+const creditcardpay = require('../assets/icons/creditcardpay.png');
 
 
 
@@ -16,6 +17,7 @@ const visacardicon = require('../assets/images/visacardicon.png');
 export default{
     logo,
     creditcard,
+    creditcardpay,
     momo,
     om,
     profileImage,

@@ -1,5 +1,4 @@
 {
-  "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true,
     "paths": {
@@ -12,6 +11,12 @@
     "**/*.ts",
     "**/*.tsx",
     ".expo/types/**/*.ts",
-    "expo-env.d.ts"
-, "constants/Colors.jsx", "app/screens/SignUp.jsx", "app/screens/Splash.jsx"  ]
+    "expo-env.d.ts",
+    "constants/Colors.jsx",
+    "app/screens/SignUp.jsx",
+    "app/screens/Splash.jsx",
+    "app/screens/index.jsx",
+    "app/screens/Verifiction.jsx"
+  ],
+  "extends": "expo/tsconfig.base"
 }

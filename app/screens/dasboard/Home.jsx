@@ -1,12 +1,27 @@
-import { StyleSheet, Text, View, TouchableOpacity, ScrollView, Image } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView, Image, Animated } from 'react-native'
+import React, { useRef, useEffect} from 'react'
 import TopNav from '../../components/TopNav'
 import TransactionDetails from '../../components/TransactionDetails'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { icons } from '../../../constants'
 
 const Home = ( {navigation} ) => {
+  const borderAnim = useRef(new Animated.Value(0)).current;
 
+  useEffect(() => {
+    Animated.loop(
+      Animated.timing(borderAnim, {
+        toValue: 1,
+        duration: 2500,
+        useNativeDriver: false,
+      })
+    ).start();
+  }, [borderAnim]);
+
+  const borderColor = borderAnim.interpolate({
+    inputRange: [0, 0.5, 1],
+    outputRange: ['#007bff', '#00aaff', '#007bff'], // cycling blues
+  });
   let ballance = 12500
   return (
     <SafeAreaView>
@@ -36,14 +51,25 @@ const Home = ( {navigation} ) => {
 
           <View style={styles.flexRow}>
             <Text style={styles.h2}>Cards (1)</Text>
-            <TouchableOpacity style={styles.btnSecondary}>
+            <TouchableOpacity 
+            style={styles.btnSecondary}
+            onPress={() => navigation.navigate('BuyCard')}>
               <Text>Buy Card</Text>
             </TouchableOpacity>
           </View>
 
+          
+
+          <Animated.View
+            style={[
+              styles.btnWrapper,
+              { borderColor, borderWidth: 2 },
+            ]}
+          >
             <TouchableOpacity style={styles.btnSecondary100}>
-              <Text style={styles.btnText}>Refere and Earn Get Your Link</Text>
+              <Text style={styles.btnText}>Refer and Earn — Get Your Link</Text>
             </TouchableOpacity>
+          </Animated.View>
 
 
           <View style={styles.transactions}>
@@ -107,14 +133,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  btnSecondary100:{
-    borderColor:'#ffffffff',
-    backgroundColor:'#fff',
-    borderWidth:1,
-    borderRadius:6,
-    marginTop:23,
-    width:'90%',
-    height:48,
+  btnWrapper: {
+    width: '90%',
+    borderRadius: 6,
+    marginTop: 23,
+  },
+  btnSecondary100: {
+    backgroundColor: '#fff',
+    borderRadius: 6,
+    height: 48,
     alignItems: 'center',
     justifyContent: 'center',
   },
