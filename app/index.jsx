@@ -31,6 +31,7 @@ import VerificationLoader from './screens/Spinner';
 import BuyCard from './screens/dasboard/pages/card/BuyCard';
 import CardDetails from './screens/dasboard/pages/card/CardDetails';
 import BuyCardLoaderScreen from './screens/dasboard/pages/card/Spinner';
+import Referals from './screens/dasboard/pages/referals/Referals';
 
 const theme = {
   ...DefaultTheme.colors,
@@ -91,6 +92,9 @@ const App = () => {
 
         {/*profile */}
         <Stack.Screen name="Profile" component={Profile} />
+
+        {/*Referals  */}
+        <Stack.Screen name="Referals" component={Referals} />
 
 
       </Stack.Navigator>

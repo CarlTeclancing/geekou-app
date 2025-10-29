@@ -214,7 +214,7 @@ const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'center',
         marginTop:6,
-        
+        color:'#000',
     },
     label:{
         fontSize:14,

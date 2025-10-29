@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
       color:'#0065FF'
     },
     logo:{
-      width:'80%',
+      width:'90%',
       height:'40%',
       borderRadius:24,
       marginTop:24

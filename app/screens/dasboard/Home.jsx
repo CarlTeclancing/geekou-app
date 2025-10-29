@@ -4,6 +4,7 @@ import TopNav from '../../components/TopNav'
 import TransactionDetails from '../../components/TransactionDetails'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { icons } from '../../../constants'
+import { navigate } from 'expo-router/build/global-state/routing'
 
 const Home = ( {navigation} ) => {
   const borderAnim = useRef(new Animated.Value(0)).current;
@@ -66,7 +67,10 @@ const Home = ( {navigation} ) => {
               { borderColor, borderWidth: 2 },
             ]}
           >
-            <TouchableOpacity style={styles.btnSecondary100}>
+            <TouchableOpacity 
+              style={styles.btnSecondary100}
+              onPress={() => navigation.navigate('Referals')}
+              >
               <Text style={styles.btnText}>Refer and Earn — Get Your Link</Text>
             </TouchableOpacity>
           </Animated.View>
