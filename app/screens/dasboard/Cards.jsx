@@ -8,7 +8,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 
 const Cards = ( {navigation}) => {
 
-    const [cardAvailable, setCardAvailable] = useState(false);
+    const [cardAvailable, setCardAvailable] = useState(true);
 
 
   return (
@@ -131,11 +131,11 @@ const styles = StyleSheet.create({
     },
     cardHold:{
         width:'100%',
-        height:200,
+        height:240,
         alignItems:'center',
         justifyContent:'center',
         marginTop:16,
-        borderRadius:12
+        borderRadius:12,
       },
       btnPrimary:{
         backgroundColor:'#0065FF',
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
         width:'82%',
         flexDirection:'row',
         justifyContent:'space-between',
-        marginTop:12,
+        marginTop:24,
     },
     col2:{
         width:'82%',

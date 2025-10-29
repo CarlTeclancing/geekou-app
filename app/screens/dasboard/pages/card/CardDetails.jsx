@@ -85,11 +85,11 @@ const styles = StyleSheet.create({
     },
     cardHold:{
         width:'100%',
-        height:200,
+        height:240,
         alignItems:'center',
         justifyContent:'center',
-        marginTop:16,
-        borderRadius:12
+        marginTop:6,
+        borderRadius:12,
       },
       btnPrimary:{
         backgroundColor:'#0065FF',
@@ -133,8 +133,6 @@ const styles = StyleSheet.create({
       fontSize:24,
       fontWeight:'600',
       alignSelf:'left',
-      
-      
     },
     text:{
         fontSize:16
@@ -147,7 +145,7 @@ const styles = StyleSheet.create({
         width:'82%',
         flexDirection:'row',
         justifyContent:'space-between',
-        marginTop:12,
+        marginTop:32,
     },
     col2:{
         width:'82%',

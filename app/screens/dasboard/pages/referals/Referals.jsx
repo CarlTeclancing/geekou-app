@@ -19,22 +19,22 @@ const Referals = () => {
                 
                 <Text style={styles.text}>Make money from the people you refer to use our service</Text>
                 <Text style={styles.text}>You will make $2.00 for each person you refer after te person buys the first card</Text>
-                <Text style={styles.text}>My Referal Code</Text>
+                <Text style={styles.textBold}>My Referal Code</Text>
                 <View style={styles.btnSecondary100}>
-                    <Text>Yuv230</Text>
+                    <Text>Comming Soon ......</Text>
                 </View>
                 <View style={styles.container2}>
                     <View style={styles.same}>
                         <Text>Total number of referal</Text>
-                        <Text>125</Text>
+                        <Text style={styles.textBig}>125</Text>
                     </View>
                     <View style={styles.same}>
                         <Text>Total number of referal Paid</Text>
-                        <Text>15</Text>
+                        <Text style={styles.textBig}>15</Text>
                     </View>
                     <View style={styles.same}>
                         <Text>Total number of amount paid</Text>
-                        <Text>30$</Text>
+                        <Text style={styles.textBig}>30$</Text>
                     </View>
                 </View>
             </View>
@@ -90,5 +90,17 @@ text:{
     padding:24,
     margin:6,
 
+  },
+  textBold:{
+    fontWeight:'bold',
+    fontSize:20,
+    marginTop:24,
+    marginBottom:24,
+    textAlign:'left',
+    width:'100%'
+  },
+  textBig:{
+    fontSize:20,
+    fontWeight:'bold'
   }
 })
